@@ -1,0 +1,11 @@
+.my-title{
+    color: rgba(0,0,0,.5);
+  }
+  .my-value{
+    color: brown;
+    font-size: large;
+  }
+  
+  .my-section{
+    border-bottom: 1px solid black;
+  }
