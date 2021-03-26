@@ -1,32 +1,32 @@
 import { Col, Row } from "antd";
-import React, { Component } from "react";
+import React from "react";
 import { employees } from "../Utils/EmployeeData";
 import PropTypes from "prop-types";
+import { useParams, useLocation } from "react-router-dom";
 
-export class EmployeeDetailsComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { employees: employees, eno: 2 };
-  }
-  renderEmployeeDetails() {
-    const emp = this.state.employees.find((e) => {
-      return e.id == this.props.match.params.myEmployeeId;
+export function EmployeeDetailsComponent(props) {
+  const myParams = useParams();
+  const myLocation = useLocation();
+  console.log("myParams", myParams, props);
+  console.log("myLocation >>", myLocation);
+  function renderEmployeeDetails() {
+    const emp = employees.find((e) => {
+      return e.id == myParams.myEmployeeId;
     });
-    return <Col span={24}>Name :{emp.name}</Col>;
-  }
-
-  render() {
-    // console.log(
-    //   "props in Employee Details",
-    //   this.props.match.params.myEmployeeId
-    // );
     return (
-      <Row>
-        <Col>Employee Details</Col>
-        {this.renderEmployeeDetails()}
-      </Row>
+      <Col span={24}>
+        <Col>Name :{emp.name}</Col>
+        <Col>Salary :{emp.salary}</Col>
+        <Col>Email :{emp.email}</Col>
+      </Col>
     );
   }
+  return (
+    <Row>
+      <Col>Employee Details</Col>
+      {renderEmployeeDetails()}
+    </Row>
+  );
 }
 
 EmployeeDetailsComponent.propTypes = {
