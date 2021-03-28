@@ -20,6 +20,9 @@ export class HeaderComponent extends Component {
         <Menu.Item key="counter">
           <Link to="/counter">Counter</Link>
         </Menu.Item>
+        <Menu.Item key="users">
+          <Link to="/users">Users</Link>
+        </Menu.Item>
       </Menu>
     );
   }

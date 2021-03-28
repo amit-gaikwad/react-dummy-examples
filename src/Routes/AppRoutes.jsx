@@ -8,6 +8,7 @@ import { EmployeeDetailsComponent } from "../EmployeeList/EmployeeDetailsCompone
 import { EmployeeListComponent } from "../EmployeeList/EmployeeListComponent";
 import { HeaderComponent } from "../Header/HeaderComponent";
 import { HomeComponent } from "../Home/HomeComponent";
+import { UserListContainer } from "../users/UserListComponent";
 
 export class AppRoutes extends Component {
   render() {
@@ -39,6 +40,7 @@ export class AppRoutes extends Component {
             component={EmployeeDetailsComponent}
           ></Route>
           <Route exact path="/counter" component={CounterContainer}></Route>
+          <Route exact path="/users" component={UserListContainer}></Route>
         </Switch>
       </BrowserRouter>
     );
