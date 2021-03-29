@@ -2,7 +2,7 @@ import { Col, Row } from "antd";
 import React from "react";
 import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
-import { employees } from "../Utils/EmployeeData";
+import { employees } from "../../Utils/EmployeeData";
 import { DummyComponent } from "./DummyComponent";
 
 export function EmployeeListComponent() {

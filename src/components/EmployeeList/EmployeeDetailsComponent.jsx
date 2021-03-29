@@ -1,6 +1,6 @@
 import { Col, Row } from "antd";
 import React from "react";
-import { employees } from "../Utils/EmployeeData";
+import { employees } from "../../Utils/EmployeeData";
 import PropTypes from "prop-types";
 import { useParams, useLocation } from "react-router-dom";
 
