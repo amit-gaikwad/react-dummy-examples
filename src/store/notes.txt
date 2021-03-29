@@ -1,0 +1,149 @@
+npm install react-redux -s
+create Action Folder
+create Counter Types constant in ActionTypes.js
+
+    export const INCREMENT_COUNTER = "INCREMENT_COUNTER";
+    export const DECREMENT_COUNTER = "DECREMENT_COUNTER";
+    export const RESET_COUNTER = "RESET_COUNTER";
+
+create CounterAction.js in it and write below code
+
+import {
+  INCREMENT_COUNTER,
+  DECREMENT_COUNTER,
+  RESET_COUNTER,
+  SET_COUNTER,
+} from "./ActionTypes";
+
+export const increamentCounter = () => {
+  return {
+    type: INCREMENT_COUNTER,
+  };
+};
+
+export const decrementCounter = () => {
+  return {
+    type: DECREMENT_COUNTER,
+  };
+};
+
+export const resetCounter = () => {
+  return {
+    type: RESET_COUNTER,
+  };
+};
+
+export const setCounter = (value) => {
+  return {
+    type: SET_COUNTER,
+    value: value,
+  };
+};
+
+create CounterReducer.js in reducers Folder
+import {
+  INCREMENT_COUNTER,
+  DECREMENT_COUNTER,
+  SET_COUNTER,
+  RESET_COUNTER,
+} from "../Actions/ActionTypes";
+
+const initialState = {
+  counter: 0,
+};
+
+export const counterReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case INCREMENT_COUNTER:
+      return { counter: state.counter + 1 };
+    case DECREMENT_COUNTER:
+      return { counter: state.counter - 1 };
+    case RESET_COUNTER:
+      return { counter: initialState.state };
+    case SET_COUNTER:
+      return { counter: action.value };
+    default:
+      return state;
+  }
+};
+
+
+create store.js in store Folder
+import { createStore, combineReducers } from "redux";
+import { counterReducer } from "./CounterReducer";
+
+const rootReducer = combineReducers({
+  counterReducer,
+});
+
+export const store = createStore(rootReducer);
+ 
+
+
+ in app.js to use connect thing
+
+import { connect } from "react-redux";
+
+
+ AppComponent.propTypes = {
+  myCounter: PropTypes.number.isRequired,
+};
+
+const mapStateToProps = (state) => {
+  return {
+    myCounter: state.counterReducer.counter,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    incrementCounter: () => {
+      dispatch(increamentCounter());
+    },
+  };
+};
+
+export const App = connect(mapStateToProps, mapDispatchToProps)(AppComponent);
+
+/////////////////////////////////////////////////////////////////////////////////////
+in counterComponent.js
+
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { Button, Col, Row } from "antd";
+import { increamentCounter } from "../Actions/CounterAction";
+//import { incrementCounterByOne } from "../Actions/CounterAction";
+
+export function CounterCompnent(props) {
+  const handleIncrementByOne = () => {
+    props.incrementCounterByOne();
+  };
+  return (
+    <Row>
+      <Col span={24}>Counter Opertaions</Col>
+      <Col span={24}>
+        <Button onClick={handleIncrementByOne}>Increment By 1</Button>
+      </Col>
+    </Row>
+  );
+}
+
+CounterCompnent.propTypes = {
+  incrementCounterByOne: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = () => {
+  return {};
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    incrementCounterByOne: () => dispatch(increamentCounter()),
+  };
+};
+
+export const CounterContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CounterCompnent);
