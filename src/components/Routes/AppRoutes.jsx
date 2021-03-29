@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { AboutComponent } from "../About/AboutComponent";
+import { AboutContainer } from "../About/AboutComponent";
 import { FlatDetailsComponent } from "../childToParent/FlatDetailsComponent";
-import { ContactUsComponent } from "../ContactUs/ContactUsComponent";
+import { ContactUsContainer } from "../ContactUs/ContactUsComponent";
 import { EmployeeDetailsComponent } from "../EmployeeList/EmployeeDetailsComponent";
 import { EmployeeListComponent } from "../EmployeeList/EmployeeListComponent";
 import { HeaderComponent } from "../Header/HeaderComponent";
-import { HomeComponent } from "../Home/HomeComponent";
+import { HomeContainer } from "../Home/HomeComponent";
 
 export class AppRoutes extends Component {
   render() {
@@ -14,13 +14,13 @@ export class AppRoutes extends Component {
       <BrowserRouter>
         <HeaderComponent></HeaderComponent>
         <Switch>
-          <Route exact path="/" component={HomeComponent}></Route>
-          <Route exact path="/home" component={HomeComponent}></Route>
-          <Route exact path="/about" component={AboutComponent}></Route>
+          <Route exact path="/" component={HomeContainer}></Route>
+          <Route exact path="/home" component={HomeContainer}></Route>
+          <Route exact path="/about" component={AboutContainer}></Route>
           <Route
             exact
             path="/contact-us"
-            component={ContactUsComponent}
+            component={ContactUsContainer}
           ></Route>
           <Route
             exact
