@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { AboutContainer } from "../About/AboutComponent";
 import { FlatDetailsComponent } from "../childToParent/FlatDetailsComponent";
 import { ContactUsContainer } from "../ContactUs/ContactUsComponent";
+import { ConterContainer } from "../Counter/CounterComponent";
 import { EmployeeDetailsComponent } from "../EmployeeList/EmployeeDetailsComponent";
 import { EmployeeListComponent } from "../EmployeeList/EmployeeListComponent";
 import { HeaderComponent } from "../Header/HeaderComponent";
@@ -37,6 +38,7 @@ export class AppRoutes extends Component {
             path="/employee/:myEmployeeId"
             component={EmployeeDetailsComponent}
           ></Route>
+          <Route exact path="/counter" component={ConterContainer}></Route>
         </Switch>
       </BrowserRouter>
     );
