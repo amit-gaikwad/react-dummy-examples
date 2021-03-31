@@ -6,6 +6,8 @@ import { ContactUsContainer } from "../ContactUs/ContactUsComponent";
 import { ConterContainer } from "../Counter/CounterComponent";
 import { EmployeeDetailsComponent } from "../EmployeeList/EmployeeDetailsComponent";
 import { EmployeeListComponent } from "../EmployeeList/EmployeeListComponent";
+import { EmployeeOperationContainer } from "../Employees/EmployeesOperationsComponent";
+import { NewEmployeeListContainer } from "../Employees/NewEmployeeListComponent";
 import { HeaderComponent } from "../Header/HeaderComponent";
 import { HomeContainer } from "../Home/HomeComponent";
 
@@ -39,6 +41,16 @@ export class AppRoutes extends Component {
             component={EmployeeDetailsComponent}
           ></Route>
           <Route exact path="/counter" component={ConterContainer}></Route>
+          <Route
+            exact
+            path="/employee-operations"
+            component={EmployeeOperationContainer}
+          ></Route>
+          <Route
+            exact
+            path="/new-employees"
+            component={NewEmployeeListContainer}
+          ></Route>
         </Switch>
       </BrowserRouter>
     );

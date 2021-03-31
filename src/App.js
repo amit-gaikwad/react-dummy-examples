@@ -23,6 +23,8 @@ const mapStateToProps = (state) => {
   };
 }; // subscribe
 
-const mapDispatchToProps = () => {}; // publish
+const mapDispatchToProps = () => {
+  return {};
+}; // publish
 
 export const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);
