@@ -15,6 +15,7 @@ class EmployeeOperationsComponent extends React.Component {
   }
 
   render() {
+    console.log("props>>", this.props);
     return (
       <Row justify="center">
         <Col span={24}>Add Employee Details</Col>
