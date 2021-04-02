@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { AboutContainer } from "../About/AboutComponent";
+import { APICallsComponent } from "../APICalls/APICallsComponent";
 import { FlatDetailsComponent } from "../childToParent/FlatDetailsComponent";
 import { ContactUsContainer } from "../ContactUs/ContactUsComponent";
 import { ConterContainer } from "../Counter/CounterComponent";
@@ -51,6 +52,7 @@ export class AppRoutes extends Component {
             path="/new-employees"
             component={NewEmployeeListContainer}
           ></Route>
+          <Route path="/api-calls" component={APICallsComponent} exact></Route>
         </Switch>
       </BrowserRouter>
     );
