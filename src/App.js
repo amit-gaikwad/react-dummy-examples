@@ -3,18 +3,29 @@ import "./App.css";
 import { AppRoutes } from "./components/Routes/AppRoutes";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-function App(props) {
-  console.log("props in app", props);
-  return (
-    <div className="App">
-      Counter in APp Coomnent : {props.myCounter}
-      <AppRoutes></AppRoutes>
-    </div>
-  );
+import React from "react";
+import { getAllEmployeesData } from "./Actions/EmployeeAction";
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  componentDidMount() {
+    this.props.mygetAllEmployee();
+  }
+  render() {
+    return (
+      <div className="App">
+        Counter in APp Coomnent : {this.props.myCounter}
+        <AppRoutes></AppRoutes>
+      </div>
+    );
+  }
 }
 
 App.propTypes = {
   myCounter: PropTypes.number.isRequired,
+  mygetAllEmployee: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => {
@@ -23,8 +34,12 @@ const mapStateToProps = (state) => {
   };
 }; // subscribe
 
-const mapDispatchToProps = () => {
-  return {};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    mygetAllEmployee: () => {
+      dispatch(getAllEmployeesData());
+    },
+  };
 }; // publish
 
 export const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);

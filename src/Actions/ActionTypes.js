@@ -4,3 +4,4 @@ export const RESET_COUNTER = "RESET_COUNTER";
 export const SET_COUNTER = "SET_COUNTER";
 export const ADD_EMPLOYEE = "ADD_EMPLOYEE";
 export const DELETE_EMPLOYEE = "DELETE_EMPLOYEE";
+export const SET_ALL_EMPLOYEES = "SET_ALL_EMPLOYEES";
