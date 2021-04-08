@@ -14,6 +14,7 @@ class App extends React.Component {
     this.props.mygetAllEmployee();
   }
   render() {
+    //this.props.mygetAllEmployee();
     return (
       <div className="App">
         Counter in APp Coomnent : {this.props.myCounter}

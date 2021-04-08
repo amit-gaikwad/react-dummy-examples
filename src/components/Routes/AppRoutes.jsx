@@ -11,6 +11,7 @@ import { EmployeeOperationContainer } from "../Employees/EmployeesOperationsComp
 import { NewEmployeeListContainer } from "../Employees/NewEmployeeListComponent";
 import { HeaderComponent } from "../Header/HeaderComponent";
 import { HomeContainer } from "../Home/HomeComponent";
+import { EnterRegistrationDetailsComponent } from "../RegistrationDetails/EnterRegistrationDetailsClassBasedComponent";
 
 export class AppRoutes extends Component {
   render() {
@@ -51,6 +52,11 @@ export class AppRoutes extends Component {
             exact
             path="/new-employees"
             component={NewEmployeeListContainer}
+          ></Route>
+          <Route
+            path="/registration"
+            component={EnterRegistrationDetailsComponent}
+            exact
           ></Route>
           <Route path="/api-calls" component={APICallsComponent} exact></Route>
         </Switch>

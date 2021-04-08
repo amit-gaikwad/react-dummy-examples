@@ -13,6 +13,8 @@ class NewEmployeeListComponent extends Component {
       <Row>
         <Col span={24}>ALl new Employees</Col>
         {this.props.myEmployees.map((e) => {
+          // eslint-disable-next-line no-undef
+          //a = 10 / 0;
           return (
             <Col span={24} key={e.emp_email}>
               <Row>
