@@ -32,6 +32,9 @@ export class HeaderComponent extends Component {
         <Menu.Item key="registration">
           <Link to="/registration">Registration</Link>
         </Menu.Item>
+        <Menu.Item key="student">
+          <Link to="/student">Student Operaion using hooks</Link>
+        </Menu.Item>
       </Menu>
     );
   }

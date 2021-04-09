@@ -12,6 +12,8 @@ import { NewEmployeeListContainer } from "../Employees/NewEmployeeListComponent"
 import { HeaderComponent } from "../Header/HeaderComponent";
 import { HomeContainer } from "../Home/HomeComponent";
 import { EnterRegistrationDetailsComponent } from "../RegistrationDetails/EnterRegistrationDetailsClassBasedComponent";
+//import { EnterStudentInfoComponent } from "../UseStateComponents/EnterStudentInfoComponent";
+import { EnterStudentInfoFunctionalCOmponent } from "../UseStateComponents/EnterStudentInfoFunctionalComponent";
 
 export class AppRoutes extends Component {
   render() {
@@ -58,7 +60,13 @@ export class AppRoutes extends Component {
             component={EnterRegistrationDetailsComponent}
             exact
           ></Route>
+
           <Route path="/api-calls" component={APICallsComponent} exact></Route>
+          <Route
+            path="/student"
+            component={EnterStudentInfoFunctionalCOmponent}
+            exact
+          ></Route>
         </Switch>
       </BrowserRouter>
     );

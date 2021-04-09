@@ -33,6 +33,8 @@ export class RegistrationDetailsComponent extends React.Component {
   }
 
   componentDidMount() {
+    //api call
+    //subscribe to events
     console.log("componentDidMount called>>");
   }
 
