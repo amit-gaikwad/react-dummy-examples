@@ -35,6 +35,9 @@ export class HeaderComponent extends Component {
         <Menu.Item key="student">
           <Link to="/student">Student Operaion using hooks</Link>
         </Menu.Item>
+        <Menu.Item key="use-effect-example">
+          <Link to="/use-effect-example">Use Effect Examples</Link>
+        </Menu.Item>
       </Menu>
     );
   }

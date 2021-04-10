@@ -12,6 +12,7 @@ import { NewEmployeeListContainer } from "../Employees/NewEmployeeListComponent"
 import { HeaderComponent } from "../Header/HeaderComponent";
 import { HomeContainer } from "../Home/HomeComponent";
 import { EnterRegistrationDetailsComponent } from "../RegistrationDetails/EnterRegistrationDetailsClassBasedComponent";
+import { ParentComponent } from "../useEffectComponents/ParentComponent";
 //import { EnterStudentInfoComponent } from "../UseStateComponents/EnterStudentInfoComponent";
 import { EnterStudentInfoFunctionalCOmponent } from "../UseStateComponents/EnterStudentInfoFunctionalComponent";
 
@@ -65,6 +66,11 @@ export class AppRoutes extends Component {
           <Route
             path="/student"
             component={EnterStudentInfoFunctionalCOmponent}
+            exact
+          ></Route>
+          <Route
+            path="/use-effect-example"
+            component={ParentComponent}
             exact
           ></Route>
         </Switch>
