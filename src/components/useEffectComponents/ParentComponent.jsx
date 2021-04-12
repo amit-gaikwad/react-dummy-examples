@@ -1,7 +1,7 @@
 import { Button, Col, Input, Row } from "antd";
 import React, { useRef, useState } from "react";
-//import { ChildComponent } from "./ChildComponent";
-import { ClassComponentDemo } from "./ClassComponentDemo";
+import { ChildComponent } from "./ChildComponent";
+//import { ClassComponentDemo } from "./ClassComponentDemo";
 
 export function ParentComponent() {
   const [roll, setRoll] = useState(0);
@@ -31,12 +31,12 @@ export function ParentComponent() {
         Enter Name: <Input onChange={handleNameChange} value={sName}></Input>
       </Col>
       <Col span={24}>
-        {/* <ChildComponent
+        <ChildComponent
           ref={childRef}
           roll={roll}
           name={sName}
-        ></ChildComponent> */}
-        <ClassComponentDemo></ClassComponentDemo>
+        ></ChildComponent>
+        {/* <ClassComponentDemo></ClassComponentDemo> */}
       </Col>
       <Col span={24}>
         <Button onClick={handleCheckClick}>Check Child Ref Data</Button>

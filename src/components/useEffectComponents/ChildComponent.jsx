@@ -1,8 +1,11 @@
 import { Col, Input, Row } from "antd";
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ThemeContext } from "../../App";
 
 export const ChildComponent = (props) => {
+  const theme = useContext(ThemeContext);
+
   const [city, setCity] = useState();
 
   useEffect(() => {
@@ -51,6 +54,9 @@ export const ChildComponent = (props) => {
         Enter City :<Input onChange={handleCityChange} value={city}></Input>
       </Col>
       <Col span={24}>city in State variable :{city}</Col>
+      <button style={{ background: theme.background, color: theme.foreground }}>
+        I am styled by theme context!
+      </button>
     </Row>
   );
 };
