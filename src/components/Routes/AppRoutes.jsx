@@ -13,6 +13,7 @@ import { HeaderComponent } from "../Header/HeaderComponent";
 import { HomeContainer } from "../Home/HomeComponent";
 import { EnterRegistrationDetailsComponent } from "../RegistrationDetails/EnterRegistrationDetailsClassBasedComponent";
 import { ParentComponent } from "../useEffectComponents/ParentComponent";
+import { CompanyInfoComponent } from "../useRefComponents/CompanyInfoComponent";
 //import { EnterStudentInfoComponent } from "../UseStateComponents/EnterStudentInfoComponent";
 import { EnterStudentInfoFunctionalCOmponent } from "../UseStateComponents/EnterStudentInfoFunctionalComponent";
 
@@ -24,6 +25,7 @@ export class AppRoutes extends Component {
         <Switch>
           <Route exact path="/" component={HomeContainer}></Route>
           <Route exact path="/home" component={HomeContainer}></Route>
+          <Route exact path="/useRef" component={CompanyInfoComponent}></Route>
           <Route exact path="/about" component={AboutContainer}></Route>
           <Route
             exact
