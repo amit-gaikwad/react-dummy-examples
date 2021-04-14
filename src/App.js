@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 import { getAllEmployeesData } from "./Actions/EmployeeAction";
 import { Input } from "antd";
 
-const themes = {
+export const themes = {
   light: {
     foreground: "#000000",
     background: "#eeeeee",

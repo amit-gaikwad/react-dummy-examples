@@ -16,7 +16,7 @@ import { ParentComponent } from "../useEffectComponents/ParentComponent";
 import { CompanyInfoComponent } from "../useRefComponents/CompanyInfoComponent";
 //import { EnterStudentInfoComponent } from "../UseStateComponents/EnterStudentInfoComponent";
 import { EnterStudentInfoFunctionalCOmponent } from "../UseStateComponents/EnterStudentInfoFunctionalComponent";
-
+import { ContextAPIComponent } from "../ContextAPI/Component1";
 export class AppRoutes extends Component {
   render() {
     return (
@@ -73,6 +73,11 @@ export class AppRoutes extends Component {
           <Route
             path="/use-effect-example"
             component={ParentComponent}
+            exact
+          ></Route>
+          <Route
+            path="/context-api"
+            component={ContextAPIComponent}
             exact
           ></Route>
         </Switch>
