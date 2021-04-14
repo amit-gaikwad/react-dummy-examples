@@ -1,43 +1,45 @@
-import { Button, Col, Row } from "antd";
-import React from "react";
-import { connect } from "react-redux";
-import { decrementCounter } from "../../Actions/CounterAction";
+import { useReducer, useState } from "react";
+//import { setCounter } from "../../Actions/CounterAction";
 import PropTypes from "prop-types";
-class AboutComponent extends React.Component {
-  constructor() {
-    super();
-  }
-  handleDecrement() {
-    this.props.myDecrementCounter();
-  }
-  render() {
-    return (
-      <Row>
-        ABout Page
-        <Col span={24}>
-          <Button onClick={this.handleDecrement.bind(this)}>Decerment</Button>
-        </Col>
-      </Row>
-    );
+function init(initialCount) {
+  return { count: initialCount };
+}
+
+//const initialState = { count: 0 };
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "increment":
+      return { count: state.count + 1 };
+    case "decrement":
+      return { count: state.count - 1 };
+    default:
+      throw new Error();
   }
 }
 
-AboutComponent.propTypes = {
-  myDecrementCounter: PropTypes.func.isRequired,
+export function AboutContainer({ initialCount = 5 }) {
+  const [xyz, dispatch] = useReducer(reducer, initialCount, init);
+  return (
+    <>
+      Count: {xyz.count}
+      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+      <button onClick={() => dispatch({ type: "increment" })}>+</button>
+    </>
+  );
+}
+
+AboutContainer.propTypes = {
+  initialCount: PropTypes.number,
 };
 
-const mapStateToProps = () => {
-  return {};
-}; // subscriber
-const mapDispatchToProps = (dispatch) => {
-  return {
-    myDecrementCounter: () => {
-      dispatch(decrementCounter());
-    },
-  };
+export const AboutComponent = () => {
+  const [counter, setCounter] = useState(0);
+  return (
+    <>
+      Count: {counter}
+      <button onClick={() => setCounter(counter - 1)}>-</button>
+      <button onClick={() => setCounter(counter + 1)}>+</button>
+    </>
+  );
 };
-
-export const AboutContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(AboutComponent);
