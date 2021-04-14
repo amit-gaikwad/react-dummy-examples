@@ -8,6 +8,10 @@ export class HeaderComponent extends Component {
         <Menu.Item key="home">
           <Link to="/home">Home</Link>
         </Menu.Item>
+        <Menu.Item key="use-context">
+          <Link to="/use-context">use context</Link>
+        </Menu.Item>
+
         <Menu.Item key="useRef">
           <Link to="/useRef">Use Ref Examples</Link>
         </Menu.Item>
