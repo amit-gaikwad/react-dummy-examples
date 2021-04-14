@@ -11,6 +11,9 @@ export class HeaderComponent extends Component {
         <Menu.Item key="use-context">
           <Link to="/use-context">use context</Link>
         </Menu.Item>
+        <Menu.Item key="use-context-class">
+          <Link to="/use-context-class">use context class</Link>
+        </Menu.Item>
 
         <Menu.Item key="useRef">
           <Link to="/useRef">Use Ref Examples</Link>
