@@ -1,45 +1,49 @@
-import { Button, Col, Row } from "antd";
 import React from "react";
-import { connect } from "react-redux";
-import { restCounter } from "../../Actions/CounterAction";
 import PropTypes from "prop-types";
-class ContactUsComponent extends React.Component {
-  constructor() {
-    super();
+export class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
   }
-  handleResetCounter() {
-    this.props.myResetCounter();
+
+  static getDerivedStateFromError(error) {
+    // Update state so the next render will show the fallback UI.
+    console.log("This is error from Component", error);
+    return { hasError: true };
   }
+
+  componentDidCatch(error, errorInfo) {
+    // You can also log the error to an error reporting service
+    console.log("This is errorInfo from Component", error, errorInfo);
+    //  logErrorToMyService(error, errorInfo);
+  }
+
   render() {
-    return (
-      <Row>
-        Contact Us Page
-        <Col span={24}>
-          <Button onClick={this.handleResetCounter.bind(this)}>
-            Reset Counter
-          </Button>
-        </Col>
-      </Row>
-    );
+    if (this.state.hasError) {
+      // You can render any custom fallback UI
+      return <h1>Something went wrong.</h1>;
+    }
+
+    return this.props.children;
   }
 }
-ContactUsComponent.propTypes = {
-  myResetCounter: PropTypes.func.isRequired,
+
+ErrorBoundary.propTypes = {
+  children: PropTypes.node,
 };
 
-const mapStateToProps = () => {
-  return {};
+export const ContactUsContainer = () => {
+  return (
+    <div>
+      This is new
+      <ErrorBoundary>
+        <SecondComponent></SecondComponent>
+      </ErrorBoundary>
+    </div>
+  );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    myResetCounter: () => {
-      dispatch(restCounter());
-    },
-  };
+const SecondComponent = () => {
+  const name = 10;
+  return <div>Heelo :{name.xyz()}</div>;
 };
-
-export const ContactUsContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ContactUsComponent);
