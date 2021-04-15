@@ -15,6 +15,7 @@ import { EnterRegistrationDetailsComponent } from "../RegistrationDetails/EnterR
 import { ClassBasedUseContextComponent } from "../useContextClassBased/ClassBasedUseContextComponent";
 import { ParentComponentUseContext } from "../useContextComponents/ParentComponent";
 import { ParentComponent } from "../useEffectComponents/ParentComponent";
+import { UseReducerCounterComponent } from "../useReducerComponents/UseReducerComponent";
 import { CompanyInfoComponent } from "../useRefComponents/CompanyInfoComponent";
 //import { EnterStudentInfoComponent } from "../UseStateComponents/EnterStudentInfoComponent";
 import { EnterStudentInfoFunctionalCOmponent } from "../UseStateComponents/EnterStudentInfoFunctionalComponent";
@@ -27,6 +28,11 @@ export class AppRoutes extends Component {
         <Switch>
           <Route exact path="/" component={HomeContainer}></Route>
           <Route exact path="/home" component={HomeContainer}></Route>
+          <Route
+            exact
+            path="/use-reducer"
+            component={UseReducerCounterComponent}
+          ></Route>
           <Route exact path="/useRef" component={CompanyInfoComponent}></Route>
           <Route exact path="/about" component={AboutContainer}></Route>
           <Route
@@ -65,7 +71,6 @@ export class AppRoutes extends Component {
             component={EnterRegistrationDetailsComponent}
             exact
           ></Route>
-
           <Route path="/api-calls" component={APICallsComponent} exact></Route>
           <Route
             path="/student"
