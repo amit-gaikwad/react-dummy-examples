@@ -11,12 +11,13 @@ class ContactUsComponent extends React.Component {
     this.props.myResetCounter();
   }
   render() {
+    var name = "John";
     return (
       <Row>
         Contact Us Page
         <Col span={24}>
           <Button onClick={this.handleResetCounter.bind(this)}>
-            Reset Counter
+            Reset Counter :{name.xyz()}
           </Button>
         </Col>
       </Row>

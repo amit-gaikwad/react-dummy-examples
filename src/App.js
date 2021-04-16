@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import { getAllEmployeesData } from "./Actions/EmployeeAction";
 import { Button } from "antd";
+import { ErrorBoundaryComponent } from "./components/ErrorBoundary/ErrorBoundaryComponent";
 
 const themes = {
   light: {
@@ -55,9 +56,11 @@ const App = (props) => {
       <div>
         <Button onClick={handleThemeChange}> Toggle Theme</Button>
       </div>
-      <ThemeContext.Provider value={usedTheme}>
-        <AppRoutes></AppRoutes>
-      </ThemeContext.Provider>
+      <ErrorBoundaryComponent>
+        <ThemeContext.Provider value={usedTheme}>
+          <AppRoutes></AppRoutes>
+        </ThemeContext.Provider>
+      </ErrorBoundaryComponent>
     </div>
   );
 };
