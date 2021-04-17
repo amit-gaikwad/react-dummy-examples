@@ -1,7 +1,5 @@
-export const INCREMENT_COUNTER = "INCREMENT_COUNTER";
-export const DECREMENT_COUNTER = "DECREMENT_COUNTER";
-export const RESET_COUNTER = "RESET_COUNTER";
-export const SET_COUNTER = "SET_COUNTER";
-export const ADD_EMPLOYEE = "ADD_EMPLOYEE";
-export const DELETE_EMPLOYEE = "DELETE_EMPLOYEE";
-export const SET_ALL_EMPLOYEES = "SET_ALL_EMPLOYEES";
+export const CREATE_USER = "CREATE_USER";
+export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const LOGIN = "LOGIN";
+export const GET_ALL_USERS = "GET_ALL_USERS";
+export const SET_ALL_USERS = "SET_ALL_USERS";
