@@ -10,6 +10,7 @@ import { EmployeeListComponent } from "../EmployeeList/EmployeeListComponent";
 import { EmployeeOperationContainer } from "../Employees/EmployeesOperationsComponent";
 import { NewEmployeeListContainer } from "../Employees/NewEmployeeListComponent";
 import { HeaderComponent } from "../Header/HeaderComponent";
+import { ClickCounter2 } from "../HOCs/ClickCounter";
 import { HomeContainer } from "../Home/HomeComponent";
 import { EnterRegistrationDetailsComponent } from "../RegistrationDetails/EnterRegistrationDetailsClassBasedComponent";
 import { ClassBasedUseContextComponent } from "../useContextClassBased/ClassBasedUseContextComponent";
@@ -27,7 +28,7 @@ export class AppRoutes extends Component {
         <HeaderComponent></HeaderComponent>
         <Switch>
           <Route exact path="/" component={HomeContainer}></Route>
-          <Route exact path="/home" component={HomeContainer}></Route>
+          <Route exact path="/home" component={ClickCounter2}></Route>
           <Route
             exact
             path="/use-reducer"
