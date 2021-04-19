@@ -10,6 +10,8 @@ import { EmployeeListComponent } from "../EmployeeList/EmployeeListComponent";
 import { EmployeeOperationContainer } from "../Employees/EmployeesOperationsComponent";
 import { NewEmployeeListContainer } from "../Employees/NewEmployeeListComponent";
 import { HeaderComponent } from "../Header/HeaderComponent";
+import { CounterOneContainer } from "../HocComponents/Counter1Component";
+import { CounterTwoContainer } from "../HocComponents/Counter2Component";
 import { HomeContainer } from "../Home/HomeComponent";
 import { EnterRegistrationDetailsComponent } from "../RegistrationDetails/EnterRegistrationDetailsClassBasedComponent";
 import { ClassBasedUseContextComponent } from "../useContextClassBased/ClassBasedUseContextComponent";
@@ -28,6 +30,8 @@ export class AppRoutes extends Component {
         <Switch>
           <Route exact path="/" component={HomeContainer}></Route>
           <Route exact path="/home" component={HomeContainer}></Route>
+          <Route exact path="/hoc1" component={CounterOneContainer}></Route>
+          <Route exact path="/hoc2" component={CounterTwoContainer}></Route>
           <Route
             exact
             path="/use-reducer"
